@@ -2,6 +2,7 @@ export interface ICountriesState{
     countries: ICountryState[];
     filterCountries: ICountryState[];
     currentCountry: ICountryState | null;
+    loading: boolean;
 }
 
 export interface ICountryState {

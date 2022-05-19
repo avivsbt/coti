@@ -27,6 +27,7 @@ function App() {
   const countries = useSelector((state: RootState) => state.countries.countries);
   const filterCountries = useSelector((state: RootState) => state.countries.filterCountries);
   const currentCountry = useSelector((state: RootState) => state.countries.currentCountry);
+  const loading = useSelector((state: RootState) => state.countries.loading);
 
   const renderCountries = (countries: ICountryState[]) => {
     const items = countries.map((country: ICountryState, i: number) => {
@@ -43,6 +44,7 @@ function App() {
     <div className="container">
       <Header />
       <div className='content'>
+        {loading && (<div>loading...</div>)}
         {countries ? <ul className='countries-card'>{filterCountries.length > 0 ? renderCountries(filterCountries) : renderCountries(countries)}</ul> : null}
         <div className='cover-country-card'>{currentCountry ? <CountryCard country={currentCountry} /> : null}</div>
       </div>

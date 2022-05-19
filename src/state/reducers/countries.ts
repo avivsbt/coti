@@ -4,7 +4,8 @@ import { ICountriesState } from "../models/countries";
 const initialState: ICountriesState = {
     countries: [],
     filterCountries: [],
-    currentCountry: null
+    currentCountry: null,
+    loading: true
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -13,6 +14,7 @@ const reducer = (state = initialState, action: any) => {
         case ActionType.SET_COUNTRIES:
 
             if (state.countries.length > 0) return state;
+            state.loading = false;
             const { countries } = action;
             return { ...state, countries };
 

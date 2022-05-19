@@ -53,7 +53,11 @@ ul, li {
   cursor: pointer;
 }
 
-.cover-country img{
+.cover-country-img{
+  margin-top:10px;
+}
+
+.cover-country-img img{
   width: 100%;
 }
 
