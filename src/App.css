@@ -15,6 +15,10 @@ ul, li {
   border-bottom: 1px solid #ccc;
 }
 
+.logo{
+  width: 120px;
+}
+
 .sidebar {
   grid-row-end: span 2;
 }
@@ -49,6 +53,10 @@ ul, li {
   padding: 0 5px;
 }
 
+.cover-country div{
+  margin-bottom: 5px;
+}
+
 .country{
   cursor: pointer;
 }
@@ -77,3 +85,4 @@ ul, li {
   font-size: 11px;
   margin: 5px;
 }
+
