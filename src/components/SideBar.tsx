@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { resetCurrent, setFilterCountries } from '../state/actions/countries';
+import { setCurrentCountry, setFilterCountries } from '../state/reducers/countriesSlice';
 import { ICountryState } from '../state/models/countries';
 
 interface props {
@@ -12,8 +12,8 @@ const SideBar: React.FC<props> = ({ countries }) => {
     const alphabet: string[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "ALL"];
 
     const filterAlphabet = (letter: string): void => {
-        dispatch(resetCurrent());
-        if(letter === "ALL"){
+        dispatch(setCurrentCountry(null));
+        if (letter === "ALL") {
             dispatch(setFilterCountries([]));
             return;
         }
@@ -25,7 +25,7 @@ const SideBar: React.FC<props> = ({ countries }) => {
 
     return (
         <div className='cover-letters'>
-            {alphabet.map((letter, i) => { return (<div onClick={() => filterAlphabet(letter)} className='letter' key={i}>{letter}</div>);})}
+            {alphabet.map((letter, i) => { return (<div onClick={() => filterAlphabet(letter)} className='letter' key={i}>{letter}</div>); })}
         </div>
     )
 }

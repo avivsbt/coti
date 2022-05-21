@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './state/configureStore';
-import { getCountries, setCurrentCountry } from './state/actions/countries';
+import { getCountries, setCurrentCountry } from './state/reducers/countriesSlice';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
 import { ICountryState } from './state/models/countries';

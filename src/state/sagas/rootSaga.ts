@@ -1,7 +1,7 @@
 import { takeLatest } from "redux-saga/effects";
 import { handleGetCountries } from "./handlers/countries";
-import { ActionType } from "../action-types/countries";
+import { getCountries } from "../reducers/countriesSlice";
 
 export function* watcherSaga() {
-    yield takeLatest(ActionType.GET_COUNTRIES, handleGetCountries);
+    yield takeLatest(getCountries.type, handleGetCountries);
 }

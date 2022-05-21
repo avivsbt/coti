@@ -1,4 +1,4 @@
-export interface ICountriesState{
+export interface ICountriesState {
     countries: ICountryState[];
     filterCountries: ICountryState[];
     currentCountry: ICountryState | null;
