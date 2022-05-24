@@ -1,0 +1,8 @@
+version: '1'
+services:
+  coti-app-prod:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8080:80"
